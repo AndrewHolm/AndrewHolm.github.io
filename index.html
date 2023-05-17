@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Whoop API Interface</title>
+</head>
+<body>
+<h1>Whoop API Interface</h1>
+<p>This is a simple interface that can be used to interact with the Whoop API.</p>
+<p>To use the interface, simply enter your Whoop API key in the text box and click on the "Submit" button.</p>
+<input type="text" id="api-key" value="your_api_key">
+<button id="submit-button">Submit</button>
+<script>
+const apiKey = document.getElementById("api-key").value;
+const submitButton = document.getElementById("submit-button");
+submitButton.addEventListener("click", async () => {
+try {
+const response = await fetch("https://api.whoop.com/users/me/data", {
+headers: {
+"Authorization": "Bearer " + apiKey,
+},
+});
+const data = await response.json();
+console.log(data);
+} catch (error) {
+console.error(error);
+}
+});
+</script>
+</body>
+</html>
