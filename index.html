@@ -1,30 +1,56 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Whoop API Interface</title>
+    <title>Andrew Holm - Personal Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 36px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        p {
+            font-size: 18px;
+        }
+    </style>
 </head>
 <body>
-<h1>Whoop API Interface</h1>
-<p>This is a simple interface that can be used to interact with the Whoop API.</p>
-<p>To use the interface, simply enter your Whoop API key in the text box and click on the "Submit" button.</p>
-<input type="text" id="api-key" value="your_api_key">
-<button id="submit-button">Submit</button>
-<script>
-const apiKey = document.getElementById("api-key").value;
-const submitButton = document.getElementById("submit-button");
-submitButton.addEventListener("click", async () => {
-try {
-const response = await fetch("https://api.whoop.com/users/me/data", {
-headers: {
-"Authorization": "Bearer " + apiKey,
-},
-});
-const data = await response.json();
-console.log(data);
-} catch (error) {
-console.error(error);
-}
-});
-</script>
+    <header>
+        <h1>Andrew Holm</h1>
+        <p>Web Developer</p>
+    </header>
+    <div class="container">
+        <h2>About Me</h2>
+        <p>
+            Welcome to my personal website. I'm a web developer passionate about creating beautiful and functional websites.
+        </p>
+        <h2>Skills</h2>
+        <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>Responsive Web Design</li>
+        </ul>
+        <h2>Contact</h2>
+        <p>Email: andrew@example.com</p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/andrewholm" target="_blank">LinkedIn Profile</a></p>
+    </div>
 </body>
 </html>
